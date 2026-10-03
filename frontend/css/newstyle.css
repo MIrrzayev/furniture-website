@@ -1,31 +1,27 @@
 :root {
-    --bg-main: #f5ebd9;          /* Əsas bej arxa fon */
-    --card-dark: #3e2e26;        /* Tünd qəhvəyi kapsul və düymələr */
+    --bg-main: #f5ebd9;          
+    --card-dark: #3e2e26;        
     --card-dark-hover: #2d211b;  
-    --text-dark: #2c1f18;        /* Əsas tünd mətn */
+    --text-dark: #2c1f18;        
     --text-muted: #736155;       
     --pill-bg: rgba(255, 255, 255, 0.25);
     --pill-border: #bca892;      
     --white: #ffffff;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', Arial, sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-main);
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -37,14 +33,12 @@ a {
     background-color: var(--bg-main);
     padding: 20px 0;
 }
-
 .header .container {
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .logo {
     font-size: 20px;
     font-weight: 500;
@@ -52,13 +46,11 @@ a {
     color: var(--text-dark);
     text-transform: uppercase;
 }
-
 .navbar {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-
 .navbar a {
     font-size: 12px;
     letter-spacing: 1.5px;
@@ -68,16 +60,13 @@ a {
     text-transform: uppercase;
     transition: all 0.2s ease;
 }
-
 .navbar a:hover {
     opacity: 0.8;
 }
-
 .navbar a.active {
     background-color: var(--card-dark);
     color: var(--white);
 }
-
 .search-box {
     position: relative;
     display: flex;
@@ -87,15 +76,13 @@ a {
     border-radius: 999px;
     padding: 8px 18px;
     margin-left: 15px;
-    width: 220px; /* Axtarış qutusunu genişləndirdik ki, kiçik görünməsin */
+    width: 220px;
     transition: all 0.3s ease;
 }
-
 .search-box:focus-within {
     border-color: var(--card-dark);
     box-shadow: 0 0 0 3px rgba(62, 46, 38, 0.08);
 }
-
 .search-box input {
     border: none;
     outline: none;
@@ -106,27 +93,25 @@ a {
     color: var(--text-dark);
     font-family: inherit;
 }
-
 .search-icon {
     font-size: 14px;
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.2s ease;
 }
-
 .search-icon:hover {
     opacity: 1;
 }
 
-/* AÇILAN DROPDOWN MENYU - DAHA GENİŞ VƏ SƏLİQƏLİ */
+/* AÇILAN DROPDOWN MENYU */
 .search-dropdown {
     position: absolute;
-    top: calc(100% + 10px); /* Qutunun bir az aşağısında zərif məsafə ilə açılır */
-    left: 0;                /* Soldan yox, düz qutusunun altından başlayır */
-    width: 240px;           /* Menyunu genişləndirdik */
+    top: calc(100% + 10px); 
+    left: 0;                
+    width: 240px;           
     background-color: #ffffff;
     border: 1px solid var(--pill-border);
-    border-radius: 20px;    /* Daha oval və müasir künclər */
+    border-radius: 20px;    
     box-shadow: 0 20px 40px rgba(62, 46, 38, 0.12);
     overflow: hidden;
     opacity: 0;
@@ -135,29 +120,25 @@ a {
     transition: all 0.25s ease;
     z-index: 9999;
 }
-
 .search-dropdown.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
 .dropdown-list {
     list-style: none;
     margin: 0;
     padding: 10px 0;
 }
-
 .dropdown-list li a {
     display: block;
-    padding: 12px 22px;     /* İçəridən boşluqları artırdıq ki, balaca görünməsin */
-    font-size: 13px;        /* Yazı ölçüsünü böyütdük */
+    padding: 12px 22px;     
+    font-size: 13px;        
     font-weight: 500;
     color: var(--text-dark);
     text-transform: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .dropdown-list li a:hover {
     background-color: var(--bg-main);
     color: var(--card-dark);
@@ -168,7 +149,6 @@ a {
 .hero {
     padding: 10px 0 20px;
 }
-
 .hero-banner {
     position: relative;
     background-color: #f7ebdb;
@@ -180,7 +160,6 @@ a {
     justify-content: flex-end;
     padding: 60px;
 }
-
 .hero-bg-image {
     position: absolute;
     top: 0;
@@ -189,26 +168,22 @@ a {
     height: 100%;
     z-index: 1;
 }
-
 .hero-bg-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .hero-bg-image::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, rgba(247, 235, 219, 0) 35%, rgba(247, 235, 219, 1) 95%);
 }
-
 .hero-content-wrapper {
     position: relative;
     z-index: 2;
     max-width: 520px;
 }
-
 .hero-title {
     font-size: clamp(2rem, 3.8vw, 3.2rem);
     font-weight: 500;
@@ -217,21 +192,18 @@ a {
     margin-bottom: 20px;
     letter-spacing: -1px;
 }
-
 .hero-description {
     font-size: 0.95rem;
     color: var(--text-muted);
     margin-bottom: 30px;
     line-height: 1.5;
 }
-
 .hero-pills {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
 }
-
 .pill-tag {
     display: inline-block;
     padding: 8px 18px;
@@ -243,7 +215,6 @@ a {
     color: var(--text-dark);
     background-color: var(--pill-bg);
 }
-
 .btn-dark-pill {
     display: inline-flex;
     align-items: center;
@@ -256,7 +227,6 @@ a {
     letter-spacing: 1px;
     transition: background-color 0.2s ease;
 }
-
 .btn-dark-pill:hover {
     background-color: var(--card-dark-hover);
 }
@@ -265,13 +235,11 @@ a {
 .features {
     padding: 10px 0 50px;
 }
-
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
 .feature-card {
     position: relative;
     height: 240px;
@@ -282,14 +250,12 @@ a {
     padding: 24px;
     color: var(--white);
 }
-
 .card-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(50, 35, 25, 0.3) 0%, rgba(35, 22, 15, 0.85) 100%);
     z-index: 1;
 }
-
 .card-content {
     position: relative;
     z-index: 2;
@@ -298,7 +264,6 @@ a {
     flex-direction: column;
     justify-content: space-between;
 }
-
 .feature-number {
     display: inline-flex;
     align-items: center;
@@ -310,14 +275,12 @@ a {
     font-size: 11px;
     font-weight: 500;
 }
-
 .card-content h3 {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 6px;
     color: var(--white);
 }
-
 .card-content p {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8);
@@ -328,11 +291,9 @@ a {
 .services-info {
     padding: 50px 0;
 }
-
 .section-heading {
     margin-bottom: 35px;
 }
-
 .eyebrow {
     font-size: 12px;
     font-weight: 600;
@@ -340,26 +301,22 @@ a {
     color: var(--text-muted);
     margin-bottom: 8px;
 }
-
 .section-heading h2 {
     font-size: 2rem;
     font-weight: 500;
     color: var(--text-dark);
 }
-
 .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
 .info-card {
     background-color: rgba(255, 255, 255, 0.4);
     border: 1px solid var(--pill-border);
     border-radius: 20px;
     padding: 28px;
 }
-
 .info-number {
     display: inline-block;
     font-size: 14px;
@@ -367,20 +324,17 @@ a {
     color: var(--card-dark);
     margin-bottom: 15px;
 }
-
 .info-card h3 {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 10px;
     color: var(--text-dark);
 }
-
 .info-card p {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.6;
 }
-
 .menu-toggle {
     display: none;
     background: none;
@@ -388,10 +342,6 @@ a {
     font-size: 24px;
     cursor: pointer;
 }
-
-/* ==========================================
-   ABOUT PAGE STYLES
-   ========================================== */
 
 /* HAQQIMIZDA BANNER (TÜND FON) */
 .page-banner {
@@ -401,22 +351,18 @@ a {
     min-height: 280px;
     border-radius: 32px;
 }
-
 .page-banner .hero-title {
     color: var(--white);
 }
-
 .page-banner .eyebrow-tag {
     background-color: rgba(255, 255, 255, 0.12);
     color: var(--white);
     border-color: rgba(255, 255, 255, 0.25);
     margin-bottom: 15px;
 }
-
 .page-banner .hero-description {
     color: rgba(255, 255, 255, 0.8);
 }
-
 .hero-content-wrapper.full-width {
     max-width: 750px;
 }
@@ -425,14 +371,12 @@ a {
 .about-section {
     padding: 50px 0 70px;
 }
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
     gap: 50px;
     align-items: center;
 }
-
 .about-image-box {
     height: 380px;
     border-radius: 28px;
@@ -440,13 +384,11 @@ a {
     position: relative;
     box-shadow: 0 15px 35px rgba(62, 46, 38, 0.08);
 }
-
 .about-image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .about-text-content h2 {
     font-size: 2.2rem;
     font-weight: 500;
@@ -454,7 +396,6 @@ a {
     margin: 10px 0 20px;
     color: var(--text-dark);
 }
-
 .about-text-content p {
     font-size: 0.95rem;
     line-height: 1.7;
@@ -466,13 +407,11 @@ a {
 .about-values {
     padding: 30px 0 80px;
 }
-
 .values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
 .value-card-dark {
     background-color: var(--card-dark);
     color: var(--white);
@@ -484,12 +423,10 @@ a {
     min-height: 230px;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
 .value-card-dark:hover {
     transform: translateY(-5px);
     background-color: var(--card-dark-hover);
 }
-
 .value-number {
     display: inline-flex;
     align-items: center;
@@ -503,14 +440,12 @@ a {
     margin-bottom: 20px;
     color: var(--white);
 }
-
 .value-card-dark h3 {
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 10px;
     color: var(--white);
 }
-
 .value-card-dark p {
     font-size: 0.88rem;
     color: rgba(255, 255, 255, 0.75);
@@ -541,27 +476,20 @@ a {
     .hero-bg-image { width: 100%; opacity: 0.2; }
 }
 
-/* ==========================================
-   PRODUCTS PAGE STYLES
-   ========================================== */
-
+/* PRODUCT PAGE */
 .products-section {
     padding: 30px 0 80px;
 }
-
 .loading-text {
     font-size: 1rem;
     color: var(--text-muted);
     margin-bottom: 20px;
 }
-
 .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
-
-/* JavaScript ilə gələn Məhsul Kartlarının Stili */
 .product-card {
     background-color: rgba(255, 255, 255, 0.45);
     border: 1px solid var(--pill-border);
@@ -570,12 +498,10 @@ a {
     padding: 16px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 30px rgba(62, 46, 38, 0.08);
 }
-
 .product-image {
     width: 100%;
     height: 260px;
@@ -583,22 +509,18 @@ a {
     overflow: hidden;
     background-color: #e2d2c0;
 }
-
 .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
 }
-
 .product-card:hover .product-image img {
     transform: scale(1.05);
 }
-
 .product-info {
     padding: 16px 8px 8px;
 }
-
 .product-type {
     font-size: 11px;
     letter-spacing: 1.5px;
@@ -607,27 +529,23 @@ a {
     font-weight: 500;
     margin-bottom: 6px;
 }
-
 .product-info h3 {
     font-size: 1.25rem;
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 12px;
 }
-
 .product-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
 }
-
 .product-price {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--card-dark);
 }
-
 .btn-buy-pill {
     display: inline-flex;
     align-items: center;
@@ -639,32 +557,25 @@ a {
     font-weight: 500;
     transition: background-color 0.2s ease;
 }
-
 .btn-buy-pill:hover {
     background-color: var(--card-dark-hover);
     cursor: pointer;
 }
-
 @media (max-width: 992px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 @media (max-width: 576px) {
     .products-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* ==========================================
-   CONTACT PAGE STYLES
-   ========================================== */
-
+/* CONTACT PAGE */
 .contact-section {
     padding: 30px 0 80px;
 }
-
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -680,7 +591,6 @@ a {
     margin-bottom: 25px;
     color: var(--text-dark);
 }
-
 .contact-card {
     background-color: rgba(255, 255, 255, 0.45);
     border: 1px solid var(--pill-border);
@@ -692,12 +602,10 @@ a {
     gap: 18px;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
-
 .contact-card:hover {
     transform: translateX(5px);
     background-color: rgba(255, 255, 255, 0.65);
 }
-
 .contact-icon {
     position: relative;
     width: 48px;
@@ -710,7 +618,6 @@ a {
     justify-content: center;
     overflow: hidden;
 }
-
 .contact-icon svg {
     position: absolute;
     top: 50%;
@@ -723,13 +630,11 @@ a {
     margin: 0 !important;
     padding: 0 !important;
 }
-
 .contact-card > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .contact-card span {
     display: block;
     font-size: 10px;
@@ -739,7 +644,6 @@ a {
     margin-bottom: 3px;
     text-transform: uppercase;
 }
-
 .contact-card p {
     font-size: 0.95rem;
     font-weight: 500;
@@ -755,11 +659,9 @@ a {
     border-radius: 28px;
     padding: 40px;
 }
-
 .form-group {
     margin-bottom: 20px;
 }
-
 .form-group label {
     display: block;
     font-size: 0.85rem;
@@ -767,7 +669,6 @@ a {
     color: var(--text-dark);
     margin-bottom: 8px;
 }
-
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -781,13 +682,11 @@ a {
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--card-dark);
     box-shadow: 0 0 0 3px rgba(62, 46, 38, 0.1);
 }
-
 .btn-submit {
     width: 100%;
     justify-content: center;
@@ -797,27 +696,22 @@ a {
     cursor: pointer;
     margin-top: 10px;
 }
-
 .form-status-msg {
     font-size: 0.9rem;
     margin-bottom: 15px;
 }
-
 .password-input-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
-
 .password-input-wrapper input {
     width: 100%;
-    padding-right: 45px !important; /* İkonun üstdən yazılmaması üçün sağdan boşluq */
+    padding-right: 45px !important;
 }
-
 .toggle-password-btn:hover {
     opacity: 1;
 }
-
 .toggle-password-btn {
     position: absolute;
     right: 12px;
@@ -829,8 +723,6 @@ a {
     transition: opacity 0.2s ease;
     padding: 5px;
 }
-
-
 @media (max-width: 868px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -842,23 +734,18 @@ a {
     }
 }
 
-/* ==========================================
-   LOGIN PAGE STYLES
-   ========================================== */
+/* LOGIN PAGE */
 .login-page {
     padding: 80px 0 120px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .login-box-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-
-/* Şüşə/krem effekti verilmiş giriş forması çərçivəsi */
 .login-box {
     background-color: rgba(255, 255, 255, 0.45);
     border: 1px solid var(--pill-border);
@@ -868,12 +755,10 @@ a {
     max-width: 450px;
     box-shadow: 0 15px 35px rgba(62, 46, 38, 0.05);
 }
-
 .login-header {
     text-align: center;
     margin-bottom: 35px;
 }
-
 .login-header h1 {
     font-size: 2rem;
     font-weight: 500;
@@ -881,21 +766,18 @@ a {
     margin-bottom: 10px;
     letter-spacing: -1px;
 }
-
 .login-header p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.5;
 }
-
 #login-message {
     text-align: center;
-    color: #d9534f; /* Xəta halında qırmızımsı rəng */
+    color: #d9534f;
     margin-bottom: 15px;
     font-size: 0.9rem;
     font-weight: 500;
 }
-
 @media (max-width: 576px) {
     .login-box {
         padding: 35px 25px;
@@ -906,20 +788,15 @@ a {
     }
 }
 
-/* ==========================================
-   SERVICES PAGE STYLES
-   ========================================== */
+/* SERVICES PAGE */
 .services-section {
     padding: 30px 0 80px;
 }
-
 .service-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
-
-/* Dinamik Xidmət Kartları */
 .service-card {
     background-color: rgba(255, 255, 255, 0.45);
     border: 1px solid var(--pill-border);
@@ -930,12 +807,10 @@ a {
     flex-direction: column;
     justify-content: flex-start;
 }
-
 .service-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 30px rgba(62, 46, 38, 0.08);
 }
-
 .service-price {
     display: inline-block;
     background-color: var(--card-dark);
@@ -947,63 +822,51 @@ a {
     margin-bottom: 18px;
     align-self: flex-start;
 }
-
 .service-info h3 {
     font-size: 1.4rem;
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 12px;
 }
-
 .service-info p:last-child {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.6;
 }
-
 @media (max-width: 992px) {
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 @media (max-width: 576px) {
     .service-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* ==========================================
-   ADMIN PANEL STYLES
-   ========================================== */
+/* ADMIN PANEL */
 .admin-body {
     background-color: #fcf9f5;
 }
-
 .admin-page {
     padding: 50px 0 100px;
 }
-
 .text-center {
     text-align: center;
 }
-
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
-
 .btn-logout {
     background-color: transparent !important;
     color: #d9534f !important;
     border: 1px solid #d9534f !important;
 }
-
 .btn-logout:hover {
     background-color: #d9534f !important;
     color: var(--white) !important;
 }
-
 .admin-sections-wrapper {
     display: flex;
     flex-direction: column;
@@ -1019,7 +882,6 @@ a {
     padding: 35px 40px;
     box-shadow: 0 15px 35px rgba(62, 46, 38, 0.03);
 }
-
 .card-header {
     display: flex;
     align-items: center;
@@ -1028,7 +890,6 @@ a {
     padding-bottom: 20px;
     border-bottom: 1px solid var(--pill-border);
 }
-
 .card-header h2 {
     font-size: 1.6rem;
     font-weight: 500;
@@ -1041,8 +902,6 @@ a {
     flex-direction: column;
     gap: 15px;
 }
-
-/* JS tərəfindən yaradılan obyektlərin dizaynı */
 .admin-product, .admin-service, .admin-user {
     background-color: var(--white);
     border: 1px solid rgba(188, 168, 146, 0.4);
@@ -1053,25 +912,21 @@ a {
     justify-content: space-between;
     transition: transform 0.2s ease;
 }
-
 .admin-product:hover, .admin-service:hover, .admin-user:hover {
     transform: translateX(5px);
     border-color: var(--pill-border);
 }
-
 .admin-product h3, .admin-service h3, .admin-user h3 {
     font-size: 1.1rem;
     font-weight: 500;
     margin-bottom: 5px;
     color: var(--text-dark);
 }
-
 .admin-product p, .admin-service p, .admin-user p {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-bottom: 5px;
 }
-
 .admin-product span, .admin-service span {
     font-size: 1rem;
     font-weight: 600;
@@ -1089,22 +944,22 @@ a {
     transition: all 0.2s ease;
     margin-left: 8px;
 }
-
 .admin-product button:first-child, .admin-service button:first-child, .admin-user button:first-child {
     background-color: var(--pill-bg);
     color: var(--text-dark);
     border: 1px solid var(--pill-border);
 }
-
-.admin-product button:first-child:hover { background-color: var(--bg-main); }
-
+.admin-product button:first-child:hover {
+    background-color: var(--bg-main); 
+}
 .admin-product button:last-child, .admin-service button:last-child, .admin-user button:last-child {
     background-color: #fdeded;
     color: #d9534f;
     border: 1px solid #f5c6c6;
 }
-
-.admin-product button:last-child:hover { background-color: #d9534f; color: var(--white); }
+.admin-product button:last-child:hover { 
+    background-color: #d9534f; color: var(--white); 
+}
 
 /* Mesajlar Qutusu */
 .messages-grid {
@@ -1112,7 +967,6 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
-
 .admin-message {
     background-color: var(--white);
     border: 1px solid rgba(188, 168, 146, 0.4);
@@ -1122,34 +976,28 @@ a {
     flex-direction: column;
     justify-content: space-between;
 }
-
 .admin-message-info {
     margin-bottom: 15px;
     padding-bottom: 15px;
     border-bottom: 1px dashed var(--pill-border);
 }
-
 .admin-message-info h3 {
     font-size: 1.1rem;
     margin-bottom: 4px;
 }
-
 .admin-message-info p {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
-
 .admin-message-info span {
     font-size: 0.75rem;
     color: #999;
 }
-
 .admin-message-content p {
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 20px;
 }
-
 .delete-button {
     background-color: #fdeded;
     color: #d9534f;
@@ -1158,7 +1006,9 @@ a {
     border-radius: 999px;
     cursor: pointer;
 }
-.delete-button:hover { background-color: #d9534f; color: var(--white); }
+.delete-button:hover { 
+    background-color: #d9534f; color: var(--white); 
+}
 
 /* Form Redaktə və Əlavə (Add / Edit Forms) */
 .admin-edit-form {
@@ -1168,12 +1018,10 @@ a {
     margin-bottom: 20px;
     border: 1px dashed var(--pill-border);
 }
-
 .admin-edit-form h2 {
     font-size: 1.2rem;
     margin-bottom: 15px;
 }
-
 .admin-edit-form input {
     width: 100%;
     padding: 12px 16px;
@@ -1183,7 +1031,6 @@ a {
     outline: none;
     font-family: inherit;
 }
-
 .admin-edit-form button {
     background-color: var(--card-dark);
     color: var(--white);
@@ -1192,16 +1039,13 @@ a {
     border-radius: 999px;
     cursor: pointer;
 }
-
 @media (max-width: 868px) {
     .messages-grid { grid-template-columns: 1fr; }
     .admin-product, .admin-service, .admin-user { flex-direction: column; align-items: flex-start; gap: 15px;}
     .admin-panel-card { padding: 25px 20px; }
 }
 
-/* ==========================================
-   MOBİL MENYU (RESPONSIVE NAVBAR) STYLES
-   ========================================== */
+/* MOBİL MENYU (RESPONSIVE NAVBAR) */
 @media (max-width: 768px) {
     .header .container {
         position: relative;
@@ -1218,10 +1062,9 @@ a {
     }
 
     .navbar {
-        display: none; /* Standart halda gizlidir */
+        display: none;
     }
 
-    /* JavaScript "mobile-open" sinifini əlavə edəndə işə düşür */
     .navbar.mobile-open {
         display: flex !important;
         position: absolute;
@@ -1250,7 +1093,6 @@ a {
         color: var(--white);
     }
 
-    /* Mobil görünüşdə axtarış qutusu */
     .navbar.mobile-open .search-box {
         width: 100%;
         margin-left: 0;
@@ -1270,26 +1112,21 @@ a {
     }
 }
 
-/* ==========================================
-   CART PAGE STYLES
-   ========================================== */
+/* CART PAGE */
 .cart-section {
     padding: 40px 0 100px;
 }
-
 .cart-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
     align-items: start;
 }
-
 .cart-items-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .cart-item-card {
     background-color: rgba(255, 255, 255, 0.45);
     border: 1px solid var(--pill-border);
@@ -1299,48 +1136,40 @@ a {
     align-items: center;
     gap: 20px;
 }
-
 .cart-item-img {
     width: 90px;
     height: 90px;
     border-radius: 16px;
     object-fit: cover;
 }
-
 .cart-item-info {
     flex-grow: 1;
 }
-
 .cart-item-info h3 {
     font-size: 1.2rem;
     color: var(--text-dark);
     margin-bottom: 5px;
 }
-
 .cart-item-info p {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
-
 .cart-item-price {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--card-dark);
 }
-
 .cart-summary {
     background-color: rgba(255, 255, 255, 0.6);
     border: 1px solid var(--pill-border);
     border-radius: 28px;
     padding: 30px;
 }
-
 .cart-summary h2 {
     font-size: 1.4rem;
     margin-bottom: 20px;
     color: var(--text-dark);
 }
-
 .summary-row {
     display: flex;
     justify-content: space-between;
@@ -1348,7 +1177,6 @@ a {
     font-size: 0.95rem;
     color: var(--text-muted);
 }
-
 .summary-total {
     display: flex;
     justify-content: space-between;
@@ -1359,7 +1187,6 @@ a {
     font-weight: 600;
     color: var(--text-dark);
 }
-
 .btn-checkout {
     width: 100%;
     justify-content: center;
@@ -1368,30 +1195,25 @@ a {
     cursor: pointer;
     font-size: 12px;
 }
-
 .empty-cart {
     text-align: center;
     padding: 50px;
     font-size: 1.1rem;
     color: var(--text-muted);
 }
-
 @media (max-width: 768px) {
     .cart-grid {
         grid-template-columns: 1fr;
     }
 }
-
-/* ==========================================
-   CHECKOUT MODAL STYLES
-   ========================================== */
+/* CHECKOUT MODAL */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(62, 46, 38, 0.5); /* Arxa planın tündləşməsi */
+    background-color: rgba(62, 46, 38, 0.5);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -1401,12 +1223,10 @@ a {
     transition: all 0.3s ease;
     z-index: 99999;
 }
-
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
-
 .modal-box {
     background-color: #fcf9f5;
     border: 1px solid var(--pill-border);
@@ -1419,11 +1239,9 @@ a {
     transform: translateY(-20px);
     transition: transform 0.3s ease;
 }
-
 .modal-overlay.active .modal-box {
     transform: translateY(0);
 }
-
 .modal-close {
     position: absolute;
     top: 20px;
@@ -1435,30 +1253,24 @@ a {
     color: var(--text-dark);
     transition: color 0.2s ease;
 }
-
 .modal-close:hover {
     color: #d9534f;
 }
-
 .modal-header {
     margin-bottom: 25px;
 }
-
 .modal-header h2 {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 5px;
 }
-
 .modal-header p {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-/* ==========================================
-   CUSTOM DROPDOWN FILTER STYLES
-   ========================================== */
+/* CUSTOM DROPDOWN FILTER */
 .filter-wrapper {
     background-color: rgba(255, 255, 255, 0.45);
     border: 1px solid var(--pill-border);
@@ -1470,20 +1282,17 @@ a {
     justify-content: flex-end;
     margin-bottom: 30px;
 }
-
 .custom-dropdown-wrapper {
     position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
 .filter-label {
     font-size: 13px;
     font-weight: 500;
     color: var(--text-dark);
 }
-
 .custom-select-box {
     background-color: var(--white);
     border: 1px solid var(--pill-border);
@@ -1499,11 +1308,9 @@ a {
     user-select: none;
     transition: all 0.2s ease;
 }
-
 .custom-select-box:hover {
     border-color: var(--card-dark);
 }
-
 .arrow-icon {
     font-size: 10px;
     opacity: 0.7;
@@ -1527,13 +1334,11 @@ a {
     transition: all 0.25s ease;
     z-index: 999;
 }
-
 .custom-dropdown-list.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
 .dropdown-option {
     padding: 11px 16px;
     font-size: 13px;
@@ -1541,17 +1346,14 @@ a {
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
 .dropdown-option:hover {
     background-color: var(--bg-main);
     color: var(--card-dark);
 }
-
 .dropdown-option.active {
     background-color: var(--card-dark);
     color: var(--white);
 }
-
 @media (max-width: 768px) {
     .filter-wrapper {
         flex-direction: column;
@@ -1572,7 +1374,6 @@ a {
         min-width: 100%;
     }
 
-    /* Mobil ekranda açılan menyunun tam ekran enində və səliqəli açılması üçün */
     .custom-dropdown-list {
         width: 100%;
         left: 0;

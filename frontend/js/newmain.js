@@ -1,5 +1,5 @@
 // ==========================================
-// 1. ÜMUMİ İDARƏETMƏ (DOM YÜKLƏNDİKDƏ İŞƏ DÜŞÜR)
+// 1. ÜMUMİ İDARƏETMƏ 
 // ==========================================
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
             navbar.classList.toggle("mobile-open");
         });
 
-        // Səhifənin başqa yerinə kliklədikdə menyunu bağla
         document.addEventListener("click", function (event) {
             if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
                 navbar.classList.remove("mobile-open");
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ==========================================
-// MƏHSULLARIN YÜKLƏNMƏSİ (TƏKRARLANMANIN QARŞISI ALINIB)
+// MƏHSULLARIN YÜKLƏNMƏSİ 
 // ==========================================
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("products-container");
@@ -46,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     return;
                 }
 
-                // Əmin olmaq üçün əvvəlcə konteyneri tamamilə boşaldırıq
                 container.innerHTML = "";
 
                 visibleProducts.forEach(product => {
@@ -76,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ==========================================
-// 3. XİDMƏTLƏRİN (SERVICES) YÜKLƏNMƏSİ (CLIENT SIDE)
+// 3. XİDMƏTLƏRİN YÜKLƏNMƏSİ 
 // ==========================================
 
 fetch("http://localhost:8080/services")
@@ -201,18 +199,15 @@ if (loginForm) {
 
 
 // ==========================================
-// 6. ADMİN PANEL FUNKSİYALARI VƏ YOXLANILMALAR (PROTECTED ROUTES)
+// 6. ADMİN PANEL FUNKSİYALARI VƏ YOXLANILMALAR
 // ==========================================
 
 const token = localStorage.getItem("token");
 
 if (window.location.pathname.includes("admin.html")) {
-    // Token yoxlaması
     if (!token) {
         window.location.href = "login.html";
     }
-
-    // Çıxış (Logout) düyməsi
     const logoutButton = document.getElementById("logout-button");
     if (logoutButton) {
         logoutButton.addEventListener("click", function () {
@@ -220,8 +215,6 @@ if (window.location.pathname.includes("admin.html")) {
             window.location.href = "login.html";
         });
     }
-
-    // Role (Admin/Super_Admin) yoxlanması
     if(token) {
         try {
             const payload = JSON.parse(atob(token.split(".")[1]));
@@ -242,13 +235,8 @@ if (window.location.pathname.includes("admin.html")) {
         }
     }
 
-    // Admin Məhsullar Yüklənməsi
     loadAdminProducts();
-
-    // Admin Xidmətlər Yüklənməsi
     loadAdminServices();
-
-    // Admin Mesajlar Yüklənməsi
     loadAdminMessages(token);
 }
 
@@ -776,7 +764,7 @@ function deleteAdmin(id) {
 }
 
 // ==========================================
-// AXTARIŞ (SEARCH) VƏ AÇILAN MENYU (DROPDOWN) - YENİLƏNMİŞ
+// AXTARIŞ VƏ AÇILAN MENYU 
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -786,13 +774,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchIcon = document.querySelector(".search-icon");
 
     if (searchInput && searchDropdown && searchWrapper) {
-        // Input-a kliklədikdə və ya fokus olduqda dropdown menyunu aç
         searchInput.addEventListener("focus", function (e) {
             e.stopPropagation();
             searchDropdown.classList.add("show");
         });
-
-        // İkona kliklədikdə də açılsın və ya axtarış işə düşsün
         if (searchIcon) {
             searchIcon.addEventListener("click", function (e) {
                 e.stopPropagation();
@@ -800,23 +785,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 searchInput.focus();
             });
         }
-
-        // Səhifənin istənilən yerinə kliklədikdə dropdown-u bağla
         document.addEventListener("click", function (event) {
             if (!searchWrapper.contains(event.target)) {
                 searchDropdown.classList.remove("show");
             }
         });
-
-        // Enter düyməsinə basdıqda yönləndirmə
         searchInput.addEventListener("keypress", function (event) {
             if (event.key === "Enter") {
                 event.preventDefault();
                 const query = searchInput.value.trim().toLowerCase();
                 
                 if (query === "") return;
-                
-                // Sözə uyğun səhifəyə keçid
+
                 if (query.includes("giriş") || query.includes("login") || query.includes("admin")) {
                     window.location.href = "login.html";
                 } else if (query.includes("xidmət") || query.includes("service")) {
@@ -834,7 +814,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ==========================================
-// MƏHSULLARIN YÜKLƏNMƏSİ VƏ SƏBƏT (CART) MƏNTİQİ
+// MƏHSULLARIN YÜKLƏNMƏSİ VƏ SƏBƏT MƏNTİQİ
 // ==========================================
 fetch("http://localhost:8080/products")
     .then(response => {
@@ -880,11 +860,8 @@ fetch("http://localhost:8080/products")
         if (productsLoading) productsLoading.textContent = error.message;
     });
 
-// Səbətə əlavə etmə funksiyası
 function addToCart(id, name, price, image) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    // Məhsul artıq səbətdə varmı yoxlayaq
     let existingItem = cart.find(item => item.id === id);
     if (existingItem) {
         existingItem.quantity += 1;
@@ -895,8 +872,6 @@ function addToCart(id, name, price, image) {
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${name} səbətə əlavə olundu!`);
 }
-
-// Səbət səhifəsində məhsulların göstərilməsi
 const cartContainer = document.getElementById("cart-container");
 if (window.location.pathname.includes("cart.html") && cartContainer) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -922,7 +897,7 @@ if (window.location.pathname.includes("cart.html") && cartContainer) {
             `;
         });
         
-        itemsHtml += `</div>`; // End items list
+        itemsHtml += `</div>`;
         
         itemsHtml += `
             <div class="cart-summary">
@@ -960,8 +935,6 @@ function removeFromCart(index) {
 const checkoutModal = document.getElementById("checkout-modal");
 const closeModalBtn = document.getElementById("close-modal");
 const checkoutForm = document.getElementById("checkout-form");
-
-// "Sifarişi rəsmiləşdir" düyməsi kliklənəndə çağırılacaq funksiya
 function openCheckoutModal() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
@@ -972,15 +945,11 @@ function openCheckoutModal() {
         checkoutModal.classList.add("active");
     }
 }
-
-// Modalı bağlamaq
 if (closeModalBtn) {
     closeModalBtn.addEventListener("click", function () {
         checkoutModal.classList.remove("active");
     });
 }
-
-// Modalın çölünə (arka plana) kliklədikdə bağlansın
 if (checkoutModal) {
     checkoutModal.addEventListener("click", function (e) {
         if (e.target === checkoutModal) {
@@ -988,8 +957,6 @@ if (checkoutModal) {
         }
     });
 }
-
-// Form göndərildikdə (Sifariş təsdiq olunanda)
 if (checkoutForm) {
     checkoutForm.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -997,11 +964,7 @@ if (checkoutForm) {
         const name = document.getElementById("cust-name").value;
         const phone = document.getElementById("cust-phone").value;
         const address = document.getElementById("cust-address").value;
-
-        // Burada məlumatları alıb istəsəniz backend-ə də göndərə bilərsiniz.
         alert(`Təşəkkürlər, ${name}! Sifarişiniz uğurla qəbul olundu. Ən qısa zamanda sizinlə əlaqə saxlanılacaq.`);
-        
-        // Səbəti təmizləyirik və səhifəni yeniləyirik
         localStorage.removeItem("cart");
         checkoutModal.classList.remove("active");
         window.location.href = "products.html";
@@ -1091,8 +1054,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         }
-
-        // Səhifənin başqa yerinə kliklədikdə menyuların bağlanması
         document.addEventListener("click", function () {
             if (typeList) typeList.classList.remove("show");
             if (priceList) priceList.classList.remove("show");
@@ -1152,13 +1113,12 @@ const passwordInput = document.getElementById("password");
 
 if (togglePasswordBtn && passwordInput) {
     togglePasswordBtn.addEventListener("click", function () {
-        // Type atributunu 'password'-dən 'text'-ə və ya əksinə dəyişirik
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
-            togglePasswordBtn.textContent = "👁️‍🗨️"; // Açiq göz və ya gizlətmə simvolu
+            togglePasswordBtn.textContent = "👁️‍🗨️";
         } else {
             passwordInput.type = "password";
-            togglePasswordBtn.textContent = "👁️"; // Bağlı göz simvolu
+            togglePasswordBtn.textContent = "👁️";
         }
     });
 }
