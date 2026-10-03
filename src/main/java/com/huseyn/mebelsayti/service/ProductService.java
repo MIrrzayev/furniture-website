@@ -37,6 +37,7 @@ public class ProductService {
         product.setName(dto.getName());
         product.setType(dto.getType());
         product.setPrice(dto.getPrice());
+        product.setImage(dto.getImage());
         Product savedProduct = productRepository.save(product);
         return productMapper.toResponseDTO(savedProduct);
     }

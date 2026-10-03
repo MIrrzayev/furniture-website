@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Səbət | MEBEL</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">HANOVER & TYKE</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">ANA SƏHİFƏ</a>
+                <a href="products.html">MƏHSULLAR</a>
+                <a href="about.html">HAQQIMIZDA</a>
+                <a href="contact.html">ƏLAQƏ</a>
+                
+                <!-- Axtarış Qutusu və Dropdown Menyu -->
+                <div class="search-box" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="AXTARIŞ" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                    
+                    <div class="search-dropdown" id="search-dropdown">
+                        <ul class="dropdown-list">
+                            <li><a href="cart.html">Səbət</a></li>
+                            <li><a href="services.html">Xidmətlər</a></li>
+                            <li><a href="login.html">Giriş / Admin</a></li>
+                            <li><a href="products.html">Bütün Məhsullar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- CART HERO BANNER -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-banner page-banner">
+                    <div class="hero-content-wrapper full-width">
+                        <span class="pill-tag eyebrow-tag">SİZİN SƏBƏTİNİZ</span>
+                        <h1 class="hero-title">Səbətə Əlavə Edilən <br>Məhsullar</h1>
+                        <p class="hero-description">
+                            Seçdiyiniz mebelləri nəzərdən keçirin və sifarişi rəsmiləşdirin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CART SECTION -->
+        <section class="cart-section">
+            <div class="container">
+                <div class="cart-container" id="cart-container">
+                    <!-- JavaScript bura səbətdəki məhsulları dolduracaq -->
+                    <p id="cart-loading">Səbətiniz yoxlanılır...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SİFARİŞ MODAL PƏNCƏRƏSİ -->
+        <div class="modal-overlay" id="checkout-modal">
+            <div class="modal-box">
+                <button class="modal-close" id="close-modal">&times;</button>
+                <div class="modal-header">
+                    <h2>Sifarişi Tamamla</h2>                        <p>Zəhmət olmasa çatdırılma məlumatlarınızı daxil edin.</p>
+                </div>
+                <form id="checkout-form">
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="cust-name" style="display:block; margin-bottom:5px; font-size:13px; font-weight:500;">Ad və Soyad</label>
+                        <input type="text" id="cust-name" required placeholder="Adınızı daxil edin" style="width:100%; padding:12px 16px; border:1px solid var(--pill-border); border-radius:12px; outline:none; background:var(--white);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 15px;">
+                        <label for="cust-phone" style="display:block; margin-bottom:5px; font-size:13px; font-weight:500;">Əlaqə Nömrəsi</label>
+                        <input type="tel" id="cust-phone" required placeholder="+994 (XX) XXX-XX-XX" style="width:100%; padding:12px 16px; border:1px solid var(--pill-border); border-radius:12px; outline:none; background:var(--white);">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="cust-address" style="display:block; margin-bottom:5px; font-size:13px; font-weight:500;">Çatdırılma Ünvanı</label>
+                        <textarea id="cust-address" required placeholder="Şəhər, küçə, bina və mənzil" rows="3" style="width:100%; padding:12px 16px; border:1px solid var(--pill-border); border-radius:12px; outline:none; background:var(--white); font-family:inherit; resize:none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-dark-pill btn-checkout">SİFARİŞİ TƏSDİQ ET</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/newmain.js"></script>
+</body>
+</html>

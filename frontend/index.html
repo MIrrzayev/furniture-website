@@ -1,11 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mebel Saytı | Keyfiyyətli Mebel</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">MEBEL</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html" class="active">Ana səhifə</a>
+                <a href="products.html">Məhsullar</a>
+                <a href="about.html">Haqqımızda</a>
+                <a href="contact.html">Əlaqə</a>
+                <div class="search-box" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="AXTARIŞ" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-dropdown" id="search-dropdown">
+                        <ul class="dropdown-list">
+                            <li><a href="cart.html">Səbət</a></li>
+                            <li><a href="services.html">Xidmətlər</a></li>
+                            <li><a href="login.html">Giriş / Admin</a></li>
+                            <li><a href="products.html">Bütün Məhsullar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-banner">
+                    <div class="hero-bg-image">
+                        <img src="photos/hero_photo.jpg" alt="mehsul">
+                    </div>
+                    <div class="hero-content-wrapper">
+                        <h1 class="hero-title">MÜASİR MEBEL HƏLLƏRİ, <br>Eviniz üçün doğru seçim.</h1>
+                        <p class="hero-description">
+                            Keyfiyyətli materiallar, funksional dizayn və zövqünüzə uyğun mebel həlləri.
+                        </p>
+                        <div class="hero-pills">
+                            <span class="pill-tag">YÜKSƏK KEYFİYYƏT</span>
+                            <span class="pill-tag">PREMİUM DİZAYN</span>
+                            <span class="pill-tag">ÇOXŞAXƏLİ</span>
+                            <a href="products.html" class="btn-dark-pill">ƏTRAFLI MƏLUMAT ƏLDƏ EDİN &rsaquo;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KATEQORİYA KARTLARI (01, 02, 03) -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card" style="background-image: url('photos/moder_divan.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="feature-number">01</span>
+                            <h3>Minimal Divan</h3>
+                            <p>Üslubunuza uyğun, xüsusi hazırlanmış parçalar.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card" style="background-image: url('photos/taxta_masa.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="feature-number">02</span> <!-- Düzəliş edildi: 02 -->
+                            <h3>Jurnal masaları</h3>
+                            <p>Uzunömürlü olması üçün hazırlanmış yüksək keyfiyyətli mebel.</p>
+                        </div>
+                    </article>
+
+                    <article class="feature-card" style="background-image: url('photos/yataq_desti.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-content">
+                            <span class="feature-number">03</span> <!-- Düzəliş edildi: 03 -->
+                            <h3>Dekorasiyalar</h3>
+                            <p>Gözəllik gündəlik öhdəliklərlə qovuşur.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- XİDMƏTLƏR / NƏ TƏKLİF EDİRİK SECTION -->
+        <section class="services-info">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">NƏ TƏKLİF EDİRİK?</p>
+                    <h2>Eviniz üçün lazım olan hər şey</h2>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <span class="info-number">01</span>
+                        <h3>Keyfiyyətli material</h3>
+                        <p>Gündəlik istifadə üçün davamlı və keyfiyyətli materiallardan hazırlanmış mebellər.</p>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-number">02</span>
+                        <h3>Müasir dizayn</h3>
+                        <p>Müxtəlif interyerlərə uyğun sadə və funksional dizayn seçimləri.</p>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-number">03</span>
+                        <h3>Fərdi yanaşma</h3>
+                        <p>Məkanınıza və ehtiyaclarınıza uyğun mebel seçimləri və həllər.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/newmain.js"></script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | MEBEL</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="admin-body">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">MEBEL</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">SAYTA QAYIT</a>
+                <a href="#" id="logout-button" class="btn-logout">ÇIXIŞ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ADMIN DASHBOARD -->
+        <section class="admin-page">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <p class="eyebrow">İDARƏETMƏ</p>
+                    <h1>Admin Panel</h1>
+                    <p class="page-description mx-auto">
+                        Saytın məzmununu (adminlər, məhsullar, xidmətlər, mesajlar) bu paneldən idarə edə bilərsiniz.
+                    </p>
+                </div>
+
+                <div class="admin-sections-wrapper">
+                    
+                    <!-- 1. ADMIN İDARƏETMƏSİ -->
+                    <div class="admin-panel-card" id="admin-management-section">
+                        <div class="card-header">
+                            <h2>Adminlər</h2>
+                            <button id="add-admin" class="btn-dark-pill">+ YENİ ADMİN</button>
+                        </div>
+                        <p id="admin-message" class="status-msg"></p>
+                        <div id="add-admin-form"></div>
+                        <div id="admin-list" class="admin-list-container"></div>
+                        <div id="edit-admin-form"></div>
+                    </div>
+
+                    <!-- 2. MƏHSULLARIN İDARƏETMƏSİ -->
+                    <div class="admin-panel-card">
+                        <div class="card-header">
+                            <h2>Məhsullar</h2>
+                            <button id="add-product" class="btn-dark-pill">+ YENİ MƏHSUL</button>
+                        </div>
+                        <div id="add-product-form"></div>
+                        <p id="products-loading" class="loading-text">Məhsullar yüklənir...</p>
+                        <p id="product-message" class="status-msg"></p>
+                        <div id="admin-products" class="admin-list-container"></div>
+                        <div id="edit-product-form"></div>
+                    </div>
+
+                    <!-- 3. XİDMƏTLƏRİN İDARƏETMƏSİ -->
+                    <div class="admin-panel-card">
+                        <div class="card-header">
+                            <h2>Xidmətlər</h2>
+                            <button id="add-service" class="btn-dark-pill">+ YENİ XİDMƏT</button>
+                        </div>
+                        <div id="add-service-form"></div>
+                        <p id="services-loading" class="loading-text">Xidmətlər yüklənir...</p>
+                        <p id="service-message" class="status-msg"></p>
+                        <div id="admin-services-list" class="admin-list-container"></div>
+                        <div id="edit-service-form"></div>
+                    </div>
+
+                    <!-- 4. GƏLƏN MESAJLAR -->
+                    <div class="admin-panel-card">
+                        <div class="card-header">
+                            <h2>Mesajlar</h2>
+                        </div>
+                        <p id="messages-loading" class="loading-text">Mesajlar yüklənir...</p>
+                        <p id="message-error" class="status-msg"></p>
+                        <div id="message-list" class="admin-list-container messages-grid"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/newmain.js"></script>
+</body>
+</html>

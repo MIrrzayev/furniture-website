@@ -19,10 +19,11 @@ public class AuthController {
     private final JwtService jwtService;
     @PostMapping("/login")
     public String login(@Valid @RequestBody LoginRequestDTO dto){
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+        var authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 dto.getUsername(),
                 dto.getPassword()
         ));
-        return jwtService.generateToken(dto.getUsername());
+        String role = authentication.getAuthorities().iterator().next().getAuthority().replace("ROLE_", "");
+        return jwtService.generateToken(dto.getUsername(), role);
     }
 }

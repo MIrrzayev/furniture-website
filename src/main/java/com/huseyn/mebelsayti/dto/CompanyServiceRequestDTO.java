@@ -15,10 +15,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class CompanyServiceRequestDTO {
     @NotBlank(message = "The name cannot be empty.")
-    @Size(min = 2, max = 20, message = "Name can be between 2 and 20")
+    @Size(min = 2, max = 50, message = "Name can be between 2 and 20")
     private String name;
     @NotBlank(message = "The description cannot be empty.")
-    @Size(min = 10, max = 150, message = "Description can be between 10 and 150")
+    @Size(min = 10, max = 250, message = "Description can be between 10 and 150")
     private String description;
     @NotNull(message = "The price cannot be empty.")
     @DecimalMin(value = "0.01", message = "The price must be greater than 0.")

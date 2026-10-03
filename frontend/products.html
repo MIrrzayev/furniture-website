@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Məhsullar | MEBEL</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">MEBEL</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">ANA SƏHİFƏ</a>
+                <a href="products.html" class="active">MƏHSULLAR</a>
+                <a href="about.html">HAQQIMIZDA</a>
+                <a href="contact.html">ƏLAQƏ</a>
+                <div class="search-box" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="AXTARIŞ" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-dropdown" id="search-dropdown">
+                        <ul class="dropdown-list">
+                            <li><a href="cart.html">Səbət</a></li>
+                            <li><a href="services.html">Xidmətlər</a></li>
+                            <li><a href="login.html">Giriş / Admin</a></li>
+                            <li><a href="products.html">Bütün Məhsullar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- PRODUCTS BANNER -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-banner page-banner">
+                    <div class="hero-content-wrapper full-width">
+                        <span class="pill-tag eyebrow-tag">EKSKLÜZİV KOLLEKSİYA</span>
+                        <h1 class="hero-title">Eviniz üçün Seçilmiş <br>Mebel Məhsulları</h1>
+                        <p class="hero-description">
+                            Müxtəlif məkanlar üçün xüsusi zövqlə hazırladığımız funksional və estetik mebel kolleksiyasına nəzər yetirin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOM FILTER SECTION -->
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-wrapper">
+            
+                    <!-- 1. Məhsul Tipi Custom Dropdown -->
+                    <div class="custom-dropdown-wrapper" id="type-dropdown-wrapper">
+                        <span class="filter-label">Məhsul Tipi:</span>
+                        <div class="custom-select-box" id="type-select-btn">
+                            <span id="selected-type-text">Bütün Tiplər</span>
+                            <span class="arrow-icon">▼</span>
+                        </div>
+                        <div class="custom-dropdown-list" id="type-dropdown-list">
+                            <div data-value="all" class="dropdown-option active">Bütün Tiplər</div>
+                            <div data-value="Qonaq Otağı" class="dropdown-option">Qonaq Otağı</div>
+                            <div data-value="Yataq Otağı" class="dropdown-option">Yataq Otağı</div>
+                            <div data-value="Yemək Otağı" class="dropdown-option">Yemək Otağı</div>
+                            <div data-value="İstirahət Zonası" class="dropdown-option">İstirahət Zonası</div>
+                            <div data-value="İş Kabineti" class="dropdown-option">İş Kabineti</div>
+                            <div data-value="Dəhliz" class="dropdown-option">Dəhliz</div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Qiymət Sıralaması Custom Dropdown -->
+                    <div class="custom-dropdown-wrapper" id="price-dropdown-wrapper">
+                        <span class="filter-label">Qiymət Sıralaması:</span>
+                        <div class="custom-select-box" id="price-select-btn">
+                            <span id="selected-price-text">Standart</span>
+                            <span class="arrow-icon">▼</span>
+                        </div>
+                        <div class="custom-dropdown-list" id="price-dropdown-list">
+                            <div data-value="default" class="dropdown-option active">Standart</div>
+                            <div data-value="low-high" class="dropdown-option">Ucuzdan bahaya</div>
+                            <div data-value="high-low" class="dropdown-option">Bahadan ucuza</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS GRID SECTION -->
+        <section class="products-section">
+            <div class="container">
+                <p id="products-loading" class="loading-text">Məhsullar yüklənir...</p>
+                <div class="products-grid" id="products-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/newmain.js"></script>
+</body>
+</html>

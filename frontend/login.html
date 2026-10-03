@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş | MEBEL</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">MEBEL</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">ANA SƏHİFƏ</a>
+                <a href="products.html">MƏHSULLAR</a>
+                <a href="about.html">HAQQIMIZDA</a>
+                <a href="contact.html">ƏLAQƏ</a>
+                
+                <!-- Axtarış Qutusu və Dropdown Menyu -->
+                <div class="search-box" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="AXTARIŞ" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                    
+                    <div class="search-dropdown" id="search-dropdown">
+                        <ul class="dropdown-list">
+                            <li><a href="cart.html">Səbət</a></li>
+                            <li><a href="services.html">Xidmətlər</a></li>
+                            <li><a href="login.html" class="active">Giriş / Admin</a></li>
+                            <li><a href="products.html">Bütün Məhsullar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="login-page">
+            <div class="container">
+                <div class="login-box-wrapper">
+                    <div class="login-box">
+                        <div class="login-header">
+                            <h1>Admin Panelə Giriş</h1>
+                            <p>İdarəetmə panelinə daxil olmaq üçün məlumatlarınızı qeyd edin.</p>
+                        </div>
+                        
+                        <form id="login-form">
+                            <p id="login-message" class="form-status-msg"></p> 
+                            
+                            <div class="form-group">
+                                <label for="username">İstifadəçi adı (və ya Email)</label>
+                                <input type="text" id="username" placeholder="İstifadəçi adınızı daxil edin" required>
+                            </div>
+                            
+                            <div class="form-group password-group">
+                                <label for="password">Şifrə</label>
+                                <div class="password-input-wrapper">
+                                    <input type="password" id="password" placeholder="Şifrənizi daxil edin" required>
+                                    <button type="button" id="toggle-password" class="toggle-password-btn">👁️</button>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-dark-pill btn-submit">DAXİL OL &rsaquo;</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/newmain.js"></script>
+</body>
+</html>

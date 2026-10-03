@@ -34,29 +34,37 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
+
+                        //Login
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/admin").hasRole("ADMIN")
+
+                        //Admin management — SUPER_ADMIN only
+                        .requestMatchers(HttpMethod.POST, "/admin").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/admin", "/admin/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/admin/**").hasRole("SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/admin/**").hasRole("SUPER_ADMIN")
 
                         //products
                         .requestMatchers(HttpMethod.GET,"/products", "/products/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/products").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/products/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/products").hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/products/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/products/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
 
                         //services
                         .requestMatchers(HttpMethod.GET, "/services", "/services/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/services").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/services/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/services/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/services").hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/services/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/services/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
 
                         //messages
                         .requestMatchers(HttpMethod.POST, "/message").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/message", "/message/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/message/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/message", "/message/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/message/**").hasAnyRole("ADMIN", "SUPER_ADMIN")
 
                         //swagger
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
 
+                        //other requests
                         .anyRequest().authenticated()
         );
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

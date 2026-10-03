@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Əlaqə | MEBEL</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">MEBEL</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">ANA SƏHİFƏ</a>
+                <a href="products.html">MƏHSULLAR</a>
+                <a href="about.html">HAQQIMIZDA</a>
+                <a href="contact.html" class="active">ƏLAQƏ</a>
+                <div class="search-box" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="AXTARIŞ" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                    <div class="search-dropdown" id="search-dropdown">
+                        <ul class="dropdown-list">
+                            <li><a href="cart.html">Səbət</a></li>
+                            <li><a href="services.html">Xidmətlər</a></li>
+                            <li><a href="login.html">Giriş / Admin</a></li>
+                            <li><a href="products.html">Bütün Məhsullar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE HERO BANNER -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-banner page-banner">
+                    <div class="hero-content-wrapper full-width">
+                        <span class="pill-tag eyebrow-tag">BİZİMLƏ ƏLAQƏ</span>
+                        <h1 class="hero-title">Sualınız Var? <br>Bizim Komanda İlə Əlaqə Saxlayın.</h1>
+                        <p class="hero-description">
+                            Suallarınız, xüsusi mebel sifarişləriniz və ya əməkdaşlıq təklifləriniz üçün formu doldura və ya birbaşa bizə yaza bilərsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT CONTENT SECTION -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- ƏLAQƏ MƏLUMATLARI KARTLARI -->
+                    <div class="contact-info-wrapper">
+                        <h2>Əlaqə Məlumatları</h2>
+                        
+                        <div class="contact-card">
+                            <span class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </span>
+                            <div>
+                                <span>TELEFON</span>
+                                <p>+994 50 000 00 00</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <span class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </span>
+                            <div>
+                                <span>EMAIL</span>
+                                <p>info@mebel.az</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <span class="contact-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </span>
+                            <div>
+                                <span>ÜNVAN</span>
+                                <p>Bakı şəhəri, Azərbaycan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ƏLAQƏ FORM BOX -->
+                    <div class="contact-form-card">
+                        <h2>Bizə Mesaj Göndərin</h2>
+                        <p id="form-message" class="form-status-msg"></p>
+
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Adınız və Soyadınız</label>
+                                <input type="text" id="name" placeholder="Adınızı daxil edin" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Ünvanınız</label>
+                                <input type="email" id="email" name="email" placeholder="Email ünvanınızı daxil edin" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mesajınız</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Mesajınızı daxil edin..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-dark-pill btn-submit">MESAJI GÖNDƏR &rsaquo;</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/newmain.js"></script>
+</body>
+</html>

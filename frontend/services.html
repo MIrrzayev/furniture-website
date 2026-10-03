@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xidmətlər | MEBEL</title>
+    <link rel="stylesheet" href="css/newstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">MEBEL</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav class="navbar" id="navbar">
+                <a href="index.html">ANA SƏHİFƏ</a>
+                <a href="products.html">MƏHSULLAR</a>
+                <a href="about.html">HAQQIMIZDA</a>
+                <a href="contact.html">ƏLAQƏ</a>
+                
+                <!-- Axtarış Qutusu və Dropdown Menyu -->
+                <div class="search-box" id="search-wrapper">
+                    <input type="text" id="search-input" placeholder="AXTARIŞ" autocomplete="off">
+                    <span class="search-icon">🔍</span>
+                    
+                    <div class="search-dropdown" id="search-dropdown">
+                        <ul class="dropdown-list">
+                            <li><a href="cart.html">Səbət</a></li>
+                            <li><a href="services.html" class="active">Xidmətlər</a></li>
+                            <li><a href="login.html">Giriş / Admin</a></li>
+                            <li><a href="products.html">Bütün Məhsullar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SERVICES HERO BANNER -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-banner page-banner">
+                    <div class="hero-content-wrapper full-width">
+                        <span class="pill-tag eyebrow-tag">PEŞƏKAR YANAŞMA</span>
+                        <h1 class="hero-title">Sizə Təklif Etdiyimiz <br>Xidmətlər</h1>
+                        <p class="hero-description">
+                            Məkanınıza və ehtiyaclarınıza tam uyğun fərdiləşdirilmiş mebel həlləri, çatdırılma və peşəkar dizayn dəstəyi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES GRID SECTION -->
+        <section class="services-section">
+            <div class="container">
+                <p id="services-loading" class="loading-text">Xidmətlər yüklənir...</p>
+                <div class="service-grid" id="service-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS faylının adını main.js etdiyimizə görə bunu da main.js olaraq çağırırıq -->
+    <script src="js/newmain.js"></script> 
+</body>
+</html>

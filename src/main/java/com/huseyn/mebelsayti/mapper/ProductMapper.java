@@ -12,9 +12,10 @@ public class ProductMapper {
         product.setName(dto.getName());
         product.setPrice(dto.getPrice());
         product.setType(dto.getType());
+        product.setImage(dto.getImage());
         return product;
     }
     public ProductResponseDTO toResponseDTO(Product product){
-        return new ProductResponseDTO(product.getId(), product.getName(), product.getType(), product.getPrice());
+        return new ProductResponseDTO(product.getId(), product.getName(), product.getType(), product.getPrice(), product.getImage());
     }
 }
